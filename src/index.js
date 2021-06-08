@@ -1,19 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+import {BrowserRouter} from 'react-router-dom'
+import registerServiceWorker from './registerServiceWorker'
 
+const app = (
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+)
 
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-    
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-reportWebVitals();
+ReactDOM.render(app, document.getElementById('root'))
+registerServiceWorker()

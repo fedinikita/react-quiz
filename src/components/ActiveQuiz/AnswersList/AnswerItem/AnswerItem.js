@@ -1,23 +1,21 @@
+import React from 'react'
 import classes from './AnswerItem.module.css'
-// import {state} from '../../../../containers/Quiz/Quiz'
 
 const AnswerItem = props => {
-    const cls = [classes.AnswerItem];
-    // console.log('AnswerItem ', props);
+  const cls = [classes.AnswerItem]
 
-    if (props.answerState) {
-        cls.push(classes[props.answerState])
-    }
+  if (props.state) {
+    cls.push(classes[props.state])
+  }
 
-    return (
-        <li 
-            className={cls.join(' ')}
-            onClick={props.onAnswerClickHandler.bind(this, props.answer.id)}
-            // onClick={() => props.onAnswerClickHandler(props.answer.id)}
-        >
-            {props.answer.text}
-        </li>
-    )
+  return (
+    <li
+      className={cls.join(' ')}
+      onClick={() => props.onAnswerClick(props.answer.id)}
+    >
+      { props.answer.text }
+    </li>
+  )
 }
 
-export default AnswerItem;
+export default AnswerItem
